@@ -9,12 +9,14 @@ steps:
   id: 'Push Docker Image to Repository'
   args: ['push', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest']
 
-- name: Configure kubectl
-  run: |
-    gcloud config set project cicd-conciliacaopdv
-    gcloud config set compute/zone southamerica-east1-a
-    gcloud container clusters get-credentials gke-pernambucanas-homologacao
+- name: Configure kubectl 1
+  args: ['gcloud', 'config', 'set', 'project', 'cicd-conciliacaopdv']
+
+- name: Configure kubectl 2
+  args: ['gcloud', 'config', 'set', 'compute/zone', 'southamerica-east1-a']
+
+- name: Configure kubectl 1
+  args: ['gcloud', 'container', 'clusters', 'get-credentials, 'gke-pernambucanas-homologacao']
 
 - name: Apply deployment
-  run: |
-    kubectl apply -f deployment.yml
+  args: ['kubectl', 'apply', '-f', 'deployment.yml']

@@ -2,12 +2,6 @@ name: Deploy to GKE-teste
 
 steps:
 
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest', '.']
-
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest']
-
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['gcloud', 'config', 'set', 'project', 'refined-density-345918']
 

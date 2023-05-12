@@ -6,8 +6,11 @@ steps:
   args:
     - >
       gcloud config set project refined-density-345918
+      
       gcloud config set compute/zone southamerica-east1-a
+      
       gcloud container clusters get-credentials gke-pnb-homl001
+      
       kubectl apply -f deployment.yml
 
 options:

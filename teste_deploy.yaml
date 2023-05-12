@@ -4,7 +4,6 @@ steps:
 
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
-    - '-c'
     - >
       gcloud config set project refined-density-345918
       gcloud config set compute/zone southamerica-east1-a

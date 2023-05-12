@@ -8,6 +8,7 @@ steps:
   - --filename=deployment.yml
   - --image=gcr.io/cicd-conciliacaopdv/ubuntu:latest
   - --location=southamerica-east1-a
+  - --project=refined-density-345918
   - --cluster=gke-pnb-homl001
   - --namespace=default
 images:

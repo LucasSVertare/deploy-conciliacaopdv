@@ -9,7 +9,7 @@ steps:
   args: ['push', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest']
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['gcloud', 'config', 'set', 'project', 'gke-pernambucanas-homologacao']
+  args: ['gcloud', 'config', 'set', 'project', 'refined-density-345918']
 
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['gcloud', 'config', 'set', 'compute/zone', 'southamerica-east1-a']

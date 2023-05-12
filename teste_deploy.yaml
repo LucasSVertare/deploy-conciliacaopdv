@@ -5,7 +5,7 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
     - >
-      gcloud config set project cicd-conciliacaopdv 
+      gcloud config set project cicd-conciliacaopdv
       
       gcloud config set compute/zone southamerica-east1-a
       

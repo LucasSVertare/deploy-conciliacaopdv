@@ -1,10 +1,13 @@
 name: Deploy to GKE-teste
 
 steps:
-- name: Build
-  args: [ 'build', '-t', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest', '.' ]
-images:
-- 'gcr.io/cicd-conciliacaopdv/ubuntu:latest'
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Build Docker Image'
+  args: ['build', '-t', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+    id: 'Push Docker Image to Repository'
+    args: ['push', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest']
 
 - name: Configure kubectl
   run: |

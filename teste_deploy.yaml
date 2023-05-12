@@ -5,7 +5,7 @@ steps:
   args: ['build', '-t', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest', '.']
 options:
   logging: CLOUD_LOGGING_ONLY
-
+  
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest']
 

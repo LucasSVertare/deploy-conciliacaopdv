@@ -1,0 +1,19 @@
+name: Deploy to GKE
+
+steps:
+- name: Build
+  uses: docker/build-push-action@v2
+  with:
+    context: .
+    push: true
+    tags: gcr.io/cicd-conciliacaopdv/ubuntu:latest
+
+- name: Configure kubectl
+  run: |
+    gcloud config set project cicd-conciliacaopdv
+    gcloud config set compute/zone southamerica-east1-a
+    gcloud container clusters get-credentials gke-pernambucanas-homologacao
+
+- name: Apply deployment
+  run: |
+    kubectl apply -f deployment.yml

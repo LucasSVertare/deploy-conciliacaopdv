@@ -5,13 +5,13 @@ steps:
   args: ['build', '-t', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest']
-- name: Configure kubectl 1
+- name: 'Configure kubectl 1'
   args: ['gcloud', 'config', 'set', 'project', 'gke-pernambucanas-homologacao']
-- name: Configure kubectl 2
+- name: 'Configure kubectl 2'
   args: ['gcloud', 'config', 'set', 'compute/zone', 'southamerica-east1-a']
-- name: Configure kubectl 3
+- name: 'Configure kubectl 3'
   args: ['gcloud', 'container', 'clusters', 'get-credentials', 'gke-pnb-homl001']
-- name: Apply deployment
+- name: 'Apply deployment'
   args: ['kubectl', 'apply', '-f', 'deployment.yml']
 options:
   logging: CLOUD_LOGGING_ONLY

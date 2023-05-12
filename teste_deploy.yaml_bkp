@@ -1,0 +1,14 @@
+name: Deploy to GKE-teste
+
+steps:
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+    - echo "Teste"
+      
+      gcloud container clusters get-credentials gke-pnb-homl001 --zone southamerica-east1-a --project refined-density-345918 
+      
+      kubectl apply -f deployment.yml
+
+options:
+  logging: CLOUD_LOGGING_ONLY

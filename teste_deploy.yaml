@@ -2,11 +2,9 @@ name: Deploy to GKE-teste
 
 steps:
 - name: Build
-  uses: docker/build-push-action@v2
-  with:
-    context: .
-    push: true
-    tags: gcr.io/cicd-conciliacaopdv/ubuntu:latest
+  args: [ 'build', '-t', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest', '.' ]
+images:
+- 'gcr.io/cicd-conciliacaopdv/ubuntu:latest'
 
 - name: Configure kubectl
   run: |

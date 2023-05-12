@@ -3,16 +3,13 @@ name: Deploy to GKE-teste
 steps:
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['gcloud', 'config', 'set', 'project', 'cicd-conciliacaopdv']
-
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['gcloud', 'config', 'set', 'compute/zone', 'southamerica-east1-a']
-
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['gcloud', 'container', 'clusters', 'get-credentials', 'gke-pnb-homl001']
-
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['kubectl', 'apply', '-f', 'deployment.yml']
+  args:
+    - '-c'
+    - >
+    gcloud config set project refined-density-345918
+    gcloud config set compute/zone southamerica-east1-a
+    gcloud container clusters get-credentials gke-pnb-homl001
+    kubectl apply -f deployment.yml
 
 options:
   logging: CLOUD_LOGGING_ONLY

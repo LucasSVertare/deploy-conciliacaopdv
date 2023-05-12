@@ -15,7 +15,7 @@ steps:
 - name: Configure kubectl 2
   args: ['gcloud', 'config', 'set', 'compute/zone', 'southamerica-east1-a']
 
-- name: Configure kubectl 1
+- name: Configure kubectl 3
   args: ['gcloud', 'container', 'clusters', 'get-credentials, 'gke-pernambucanas-homologacao']
 
 - name: Apply deployment

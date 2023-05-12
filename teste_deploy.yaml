@@ -9,7 +9,7 @@ options:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest']
 
-- name: Configure kubectl 1
+- name: Configure kubectl teste 1
   args: ['gcloud', 'config', 'set', 'project', 'gke-pernambucanas-homologacao']
 
 - name: Configure kubectl 2

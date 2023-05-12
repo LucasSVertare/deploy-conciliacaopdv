@@ -3,7 +3,7 @@ name: Deploy to GKE-teste
 steps:
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['gcloud', 'config', 'set', 'project', 'refined-density-345918']
+  args: ['gcloud', 'config', 'set', 'project', 'cicd-conciliacaopdv']
 
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['gcloud', 'config', 'set', 'compute/zone', 'southamerica-east1-a']

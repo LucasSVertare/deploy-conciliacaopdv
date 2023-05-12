@@ -3,8 +3,8 @@ name: Deploy to GKE-teste
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest', '.']
-  options:
-    logging: CLOUD_LOGGING_ONLY
+options:
+  logging: NONE
 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/cicd-conciliacaopdv/ubuntu:latest']

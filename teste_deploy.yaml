@@ -12,3 +12,6 @@ steps:
   - --namespace=default
 images:
 - gcr.io/cicd-conciliacaopdv/ubuntu:latest
+
+options:
+  logging: CLOUD_LOGGING_ONLY

@@ -6,13 +6,13 @@ steps:
   args:
   - run
   - --filename=deployment.yml
-  - --image=gcr.io/cicd-conciliacaopdv/busybox:latest
+  - --image=gcr.io/cicd-conciliacaopdv/alpine:latest
   - --location=southamerica-east1-a
   - --project=refined-density-345918
   - --cluster=gke-pnb-homl001
   - --namespace=default
 images:
-- gcr.io/cicd-conciliacaopdv/busybox:latest
+- gcr.io/cicd-conciliacaopdv/alpine:latest
 
 options:
   logging: CLOUD_LOGGING_ONLY

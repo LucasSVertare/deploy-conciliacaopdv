@@ -17,7 +17,7 @@ spec:
         app: teste-conciliacao
     spec:
       imagePullSecrets:
-        - name: gcr-json-key
+        - name: countly-registry
       containers:
       - image: gcr.io/cicd-conciliacaopdv/ubuntu:latest
         name: teste-conciliacao-container

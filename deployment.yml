@@ -4,7 +4,7 @@ metadata:
   labels:
     app: teste-conciliacao
   name: teste-conciliacao
-  namespace: teste-conciliacao
+  namespace: teste-secret
 spec:
   replicas: 1
   revisionHistoryLimit: 0

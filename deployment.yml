@@ -16,9 +16,12 @@ spec:
       labels:
         app: teste-conciliacao
     spec:
+      imagePullSecrets:
+        - name: gcr-json-key
       containers:
       - image: gcr.io/cicd-conciliacaopdv/ubuntu:latest
         name: teste-conciliacao-container
+        imagePullPolicy: Always
         resources:
           limits:
             cpu: 600m
@@ -37,5 +40,3 @@ spec:
           initialDelaySeconds: 15
           periodSeconds: 20
       restartPolicy: Always
-      imagePullSecrets:
-        - name: container-registry
